@@ -5,14 +5,14 @@ import sys
 
 def map_network_paths(path):
     """
-    Map network paths: \\production.dnae.emea.denso to /mnt/networks and vice versa.
+    Map network paths: \\production.dnae.emea.denso to ~/networks and vice versa.
     """
-    if path.startswith('/mnt/networks'):
-        path = path.replace('/mnt/networks', '\\\\production.dnae.emea.denso')
+    if path.startswith('~/networks'):
+        path = path.replace('~/networks', '\\\\production.dnae.emea.denso')
     elif path.startswith('\\production.dnae.emea.denso'):
-        path = path.replace('\\production.dnae.emea.denso', '/mnt/networks')
+        path = path.replace('\\production.dnae.emea.denso', '~/networks')
     elif path.startswith('\\\\production.dnae.emea.denso'):
-        path = path.replace('\\\\production.dnae.emea.denso', '/mnt/networks')
+        path = path.replace('\\\\production.dnae.emea.denso', '~/networks')
     return path
 
 def windows_to_unix_path(path):
